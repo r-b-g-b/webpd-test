@@ -1,0 +1,8 @@
+#N canvas 469 177 450 300 10;
+#X obj 183 109 metro 1000;
+#X msg 183 79 1;
+#X floatatom 183 155 5 0 0 0 - - -, f 5;
+#X obj 183 133 counter;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 3 0 2 0;
