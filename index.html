@@ -4,17 +4,18 @@
 <head>
 	<title>Test</title>
 	<script src="webpd-latest.js"></script>
+	<script src="jquery.min.js"></script>
 </head>
 
 <body>
 	<p id="count">-</p>
 	<script type="text/javascript">
-		$.get('counter.pd', function (counterPatch) {
-			Pd.registerAbstraction('counter', counterPatch);
-		});
 		$.get('test.pd', function (mainPatch) {
-			Pd.loadPatch(mainPatch);
-			Pd.start();
+			$.get('counter.pd', function (counterPatch) {
+				Pd.registerAbstraction('counter', counterPatch);
+				Pd.loadPatch(mainPatch);
+				Pd.start();
+			});
 		});
 	</script>
 </body>
